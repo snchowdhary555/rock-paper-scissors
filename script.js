@@ -1,13 +1,38 @@
+/********************** Helper Functions **************************************/
+function random(num) {
+  return Math.floor(Math.random() * num);
+}
+
+function capitalize(playerSelection) {
+  return (
+    playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase()
+  );
+}
+
+function displayRoundWinner(roundResult) {
+  console.log(roundResult);
+}
+
+function getWinner(computerScore, playerScore) {
+  if (computerScore > playerScore) {
+    return `You Lose! the game by ${computerScore} - ${playerScore}`;
+  } else if (playerScore > computerScore) {
+    return `You Win! the game by ${playerScore} - ${computerScore}`;
+  } else {
+    return `Game Draw! by ${playerScore} - ${computerScore}`;
+  }
+}
+
+/********************* Helper Functions Ends ************************************/
+
 function computerPlay() {
   const choices = ["Rock", "Paper", "Scissors"];
-  const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+  const randomChoice = choices[random(choices.length)];
   return randomChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
-  const capitalizePlayerSelection =
-    playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
-  playerSelection = capitalizePlayerSelection;
+  playerSelection = capitalize(playerSelection);
   if (
     (computerSelection === "Rock" && playerSelection === "Scissors") ||
     (computerSelection === "Paper" && playerSelection === "Rock") ||
@@ -30,7 +55,7 @@ function game() {
   for (let i = 0; i < 5; i++) {
     playerChoice = prompt("rock, paper, scissors");
     roundResult = playRound(playerChoice, computerPlay());
-    console.log(roundResult);
+    displayRoundWinner(roundResult);
     if (roundResult.includes("Win")) {
       playerScore++;
     } else if (roundResult.includes("Lose")) {
@@ -38,11 +63,5 @@ function game() {
     }
   }
 
-  if (computerScore > playerScore) {
-    return `You Lose! the game by ${computerScore} - ${playerScore}`;
-  } else if (playerScore > computerScore) {
-    return `You Win! the game by ${playerScore} - ${computerScore}`;
-  } else {
-    return `Game Draw! by ${playerScore} - ${computerScore}`;
-  }
+  return getWinner(computerScore, playerScore);
 }
