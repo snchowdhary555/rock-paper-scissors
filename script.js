@@ -47,3 +47,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {}
+
+//Add eventListener to each weapon button
+weaponBtns.forEach(function (btn) {
+  //Play the game when user click on any weapon button
+  btn.addEventListener("click", game);
+});
