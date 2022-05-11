@@ -23,6 +23,8 @@ function capitalize(playerSelection) {
 
 /********************* Helper Functions Ends ************************************/
 
+/******************************* Main ****************************************/
+
 function computerPlay() {
   const choices = ["Rock", "Paper", "Scissors"];
   const randomChoice = choices[random(choices.length)];
