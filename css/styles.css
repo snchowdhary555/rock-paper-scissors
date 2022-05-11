@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ec994b;
+  color: #f1eee9;
+}
+
+.win {
+  color: green;
+}
+
+.lose {
+  color: red;
+}
+
+header {
+  padding: 2rem;
+  background: #15133c;
+}
+
+h1 {
+  font-family: "Macondo", cursive;
+  font-size: 3.5rem;
+  color: #ec994b;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result {
+  border: 1px solid #73777b;
+  max-width: 95%;
+  width: 500px;
+  min-height: 100px;
+  background: #f1eee9;
+  color: #15133c;
+  display: flex;
+  flex-direction: column;
+  align-items: Center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0.5rem;
+  gap: 1.5rem;
+}
+
+.result-display {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.result .score {
+  display: flex;
+  gap: 3rem;
+}
+
+.player-score-display,
+.computer-score-display {
+  color: #ec994b;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 2rem;
+  font-size: 4rem;
+  border-radius: 10px;
+  background: #f1eee9;
+  margin: 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #73777b;
+}
+
+button.reset {
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  background: #15133c;
+  color: #f1eee9;
+  margin-top: 1.5rem;
+}
+
+button.reset:hover {
+  border: 1px solid #73777b;
+}
+
+footer {
+  font-family: cursive;
+  background: #15133c;
+  padding: 1rem;
+  word-spacing: 0.2rem;
+}
+
+/************************ Media Queries *************************************/
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  button {
+    font-size: 2.5rem;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  button {
+    font-size: 2rem;
+    margin: 0.2rem;
+  }
+}
