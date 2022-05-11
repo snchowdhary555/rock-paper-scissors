@@ -1,3 +1,15 @@
+/********************** Variables Declaration **********************************/
+
+const resultDisplay = document.querySelector(".result-display");
+const playerScoreDisplay = document.querySelector(".player-score-display");
+const computerScoreDisplay = document.querySelector(".computer-score-display");
+let playerScore = 0;
+let computerScore = 0;
+const weaponBtns = document.querySelectorAll(".weapons button");
+const resetBtn = document.querySelector(".reset");
+
+/********************* Variables Declaration End *******************************/
+
 /********************** Helper Functions **************************************/
 function random(num) {
   return Math.floor(Math.random() * num);
