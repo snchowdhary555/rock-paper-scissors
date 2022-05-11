@@ -21,6 +21,17 @@ function capitalize(playerSelection) {
   );
 }
 
+function displayGameResult() {
+  if (playerScore > computerScore) {
+    resultDisplay.textContent = `You Won! the Game by ${playerScore} - ${computerScore}`;
+    resultDisplay.classList.add("win");
+  } else {
+    resultDisplay.textContent = `You Lose! the Game by ${computerScore} - ${playerScore}`;
+    resultDisplay.classList.add("lose");
+  }
+  resetBtn.textContent = "Play Again!";
+}
+
 /********************* Helper Functions Ends ************************************/
 
 /******************************* Main ****************************************/
