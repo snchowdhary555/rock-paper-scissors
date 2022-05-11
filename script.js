@@ -46,7 +46,24 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {}
+function game() {
+  if (playerScore < 5 && computerScore < 5) {
+    const playerChoice = this.classList.value;
+    const roundResult = playRound(playerChoice, computerPlay());
+    resultDisplay.textContent = roundResult;
+    if (roundResult.includes("Win")) {
+      playerScore++;
+      playerScoreDisplay.textContent = playerScore;
+    } else if (roundResult.includes("Lose")) {
+      computerScore++;
+      computerScoreDisplay.textContent = computerScore;
+    }
+  }
+
+  if (playerScore === 5 || computerScore === 5) {
+    displayGameResult();
+  }
+}
 
 //Add eventListener to each weapon button
 weaponBtns.forEach(function (btn) {
