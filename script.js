@@ -9,20 +9,6 @@ function capitalize(playerSelection) {
   );
 }
 
-function displayRoundWinner(roundResult) {
-  console.log(roundResult);
-}
-
-function getWinner(computerScore, playerScore) {
-  if (computerScore > playerScore) {
-    return `You Lose! the game by ${computerScore} - ${playerScore}`;
-  } else if (playerScore > computerScore) {
-    return `You Win! the game by ${playerScore} - ${computerScore}`;
-  } else {
-    return `Game Draw! by ${playerScore} - ${computerScore}`;
-  }
-}
-
 /********************* Helper Functions Ends ************************************/
 
 function computerPlay() {
@@ -46,22 +32,4 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  let computerScore = 0;
-  let playerScore = 0;
-  let playerChoice = "";
-  let roundResult = "";
-
-  for (let i = 0; i < 5; i++) {
-    playerChoice = prompt("rock, paper, scissors");
-    roundResult = playRound(playerChoice, computerPlay());
-    displayRoundWinner(roundResult);
-    if (roundResult.includes("Win")) {
-      playerScore++;
-    } else if (roundResult.includes("Lose")) {
-      computerScore++;
-    }
-  }
-
-  return getWinner(computerScore, playerScore);
-}
+function game() {}
