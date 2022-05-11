@@ -57,6 +57,16 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+function reset() {
+  resetBtn.textContent = "Reset";
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreDisplay.textContent = playerScore;
+  computerScoreDisplay.textContent = computerScore;
+  resultDisplay.textContent = " First to Win 5 of the rounds will be winner";
+  resultDisplay.classList.remove("win", "lose");
+}
+
 function game() {
   if (playerScore < 5 && computerScore < 5) {
     const playerChoice = this.classList.value;
