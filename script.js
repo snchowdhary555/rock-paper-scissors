@@ -81,3 +81,5 @@ weaponBtns.forEach(function (btn) {
   //Play the game when user click on any weapon button
   btn.addEventListener("click", game);
 });
+
+resetBtn.addEventListener("click", reset);
