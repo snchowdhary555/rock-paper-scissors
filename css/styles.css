@@ -129,8 +129,13 @@ footer {
     font-size: 2.5rem;
   }
 
+  .result {
+    min-height: 135px;
+  }
+
   button {
-    font-size: 2rem;
+    font-size: 2.3rem;
+    padding: 1rem;
     margin: 0.2rem;
   }
 }
